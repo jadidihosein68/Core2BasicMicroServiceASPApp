@@ -43,11 +43,11 @@ namespace MicroService
                       Assembly.
                        GetName().Name);
 
-            //Configuring Connection Resiliency:
-            sqlOptions.
-                EnableRetryOnFailure(maxRetryCount: 5,
-                maxRetryDelay: TimeSpan.FromSeconds(30),
-                errorNumbersToAdd: null);
+                    //Configuring Connection Resiliency:
+                    sqlOptions.
+                        EnableRetryOnFailure(maxRetryCount: 5,
+                        maxRetryDelay: TimeSpan.FromSeconds(30),
+                        errorNumbersToAdd: null);
 
                 });
 
@@ -57,11 +57,22 @@ namespace MicroService
                     RelationalEventId.QueryClientEvaluationWarning));
             });
 
+            services.AddSwaggerGen(options =>
+            {
+                options.DescribeAllEnumsAsStrings();
+                options.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info
+                {
+                    Title = "eShopOnContainers - Catalog HTTP API",
+                    Version = "v1",
+                    Description = "The Catalog Microservice HTTP API. This is a Data-Driven/CRUD microservice sample",
+                    TermsOfService = "Terms Of Service"
+                });
+            });
 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
@@ -75,6 +86,10 @@ namespace MicroService
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            app.UseSwagger().UseSwaggerUI(c =>
+              {
+                  c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+              });
         }
     }
 }
