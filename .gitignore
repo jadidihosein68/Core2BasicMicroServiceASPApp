@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/MicroService/MicroService.common/bin/Debug/netcoreapp2.2
+/MicroService/MicroService.common/obj
+/MicroService/MicroService/bin/Debug/netcoreapp2.2
+/MicroService/MicroService/obj/Debug/netcoreapp2.2
+/MicroService/MicroService/obj
+/MicroService/.vs/MicroService/v15
