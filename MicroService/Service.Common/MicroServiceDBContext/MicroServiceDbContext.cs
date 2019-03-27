@@ -1,10 +1,10 @@
-﻿using MicroService.common.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Service.Common.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace MicroService.common.MicroServiceDbContext
+namespace Service.Common.MicroServiceDbContext
 {
     public class MicroServiceDbContext : DbContext
     {

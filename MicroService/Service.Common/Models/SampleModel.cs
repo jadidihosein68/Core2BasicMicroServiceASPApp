@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MicroService.common.Models
+namespace Service.Common.Models
 {
     public class SampleModel
     {

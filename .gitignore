@@ -8,3 +8,5 @@
 /MicroService/MicroService/obj/Debug/netcoreapp2.2
 /MicroService/MicroService/obj
 /MicroService/.vs/MicroService/v15
+/MicroService/Service.Common/bin/Debug/netcoreapp2.2
+/MicroService/Service.Common/obj
