@@ -11,3 +11,4 @@
 /MicroService/Service.Common/bin/Debug/netcoreapp2.2
 /MicroService/Service.Common/obj
 /MicroService/Example.Service/obj
+/MicroService/Example.Service/bin/Debug/netcoreapp2.2
