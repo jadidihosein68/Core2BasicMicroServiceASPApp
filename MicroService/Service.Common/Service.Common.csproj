@@ -20,8 +20,6 @@
   <ItemGroup>
     <Folder Include="Models\Constants\" />
     <Folder Include="Models\DTOs\" />
-    <Folder Include="Certifications\" />
-    <Folder Include="Validators\" />
   </ItemGroup>
 
 </Project>
