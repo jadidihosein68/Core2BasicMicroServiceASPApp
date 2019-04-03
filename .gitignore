@@ -10,3 +10,4 @@
 /MicroService/.vs/MicroService/v15
 /MicroService/Service.Common/bin/Debug/netcoreapp2.2
 /MicroService/Service.Common/obj
+/MicroService/Example.Service/obj
