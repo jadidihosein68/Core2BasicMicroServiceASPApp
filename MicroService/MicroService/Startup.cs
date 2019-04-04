@@ -14,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Service.Common.MicroServiceDbContext;
+using Service.Common.Models;
 
 namespace MicroService
 {
@@ -43,6 +44,8 @@ namespace MicroService
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
 
             services.AddDbContext<MicroServiceDbContext>(options =>
             {

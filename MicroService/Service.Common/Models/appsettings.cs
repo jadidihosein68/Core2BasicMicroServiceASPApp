@@ -4,8 +4,9 @@ using System.Text;
 
 namespace Service.Common.Models
 {
-    public class appsettings
+    public class AppSettings
     {
-        // fix me !
+        public AppSettings(){}
+        public string Option1 { get; set; }
     }
 }
