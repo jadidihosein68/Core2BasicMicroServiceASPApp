@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Service.Common.Models
+namespace Service.Common.Models.Configurations
 {
     public class AppSettings
     {

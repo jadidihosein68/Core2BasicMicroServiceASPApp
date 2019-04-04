@@ -15,6 +15,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Service.Common.MicroServiceDbContext;
 using Service.Common.Models;
+using Service.Common.Models.Configurations;
 
 namespace MicroService
 {
