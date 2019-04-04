@@ -5,28 +5,31 @@ using System.IO;
 using System.Diagnostics;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Configuration;
+using Service.Common.Models;
+using Service.Common.Models.Configurations;
 
 namespace Service.Common.Adapters
 {
     public class PythonAdapter : IPythonAdapter
     {
 
-        public PythonAdapter()
+        public PythonAdapter(IOptions<AppSettings> _appSettings)
         {
-
-            
+            AppSettings = _appSettings.Value;
 
         }
 
-
+        private readonly AppSettings AppSettings;
 
         public string get()
         {
 
-            const string python = @"your python engine path";
+            string python = AppSettings.Python.EnginePath;
 
             // python app to call
-            const string myPythonApp = @"your python script path";
+            string myPythonApp = AppSettings.Python.ScriptPath;
+           // const string myPythonApp = @"C:\WS\ASP\BasicMicroServiceASPApp\MicroService\Service.Common\PythonScripts\HelloWorld.py";
+        
 
             // dummy parameters to send Python script
             int x = 2;

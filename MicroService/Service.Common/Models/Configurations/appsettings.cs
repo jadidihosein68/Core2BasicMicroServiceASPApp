@@ -8,5 +8,6 @@ namespace Service.Common.Models.Configurations
     {
         public AppSettings(){}
         public string Option1 { get; set; }
+        public Python Python { get; set; }
     }
 }
