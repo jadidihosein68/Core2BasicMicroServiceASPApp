@@ -14,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Service.Common.MicroServiceDbContext;
+using Service.Common.MicroServiceDBContext;
 using Service.Common.Models;
 using Service.Common.Models.Configurations;
 
@@ -33,7 +34,6 @@ namespace MicroService
         {
 
             services.AddCors(options =>
-
             {
                 options.AddPolicy("CorsPolicy",
                     builder => builder
@@ -43,11 +43,9 @@ namespace MicroService
                         .AllowCredentials()
                         .WithExposedHeaders("X-UserIdentification"));
             });
-
+            services.AddHttpClient();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
-
             services.AddDbContext<MicroServiceDbContext>(options =>
             {
                 options.UseSqlServer(Configuration["ConnectionString"],
@@ -85,6 +83,8 @@ namespace MicroService
                     TermsOfService = "Terms Of Service"
                 });
             });
+
+            services.AddScoped<IMicroServiceDbContext, MicroServiceDbContext>();
 
         }
 

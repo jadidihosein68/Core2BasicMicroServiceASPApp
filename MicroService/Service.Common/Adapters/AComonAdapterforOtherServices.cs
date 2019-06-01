@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Service.Common.Adapters
 {
-    class AComonAdapterforOtherServices
+    public class AComonAdapterforOtherServices
     {
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Service.Common.Certifications
 {
-    class SampleCertification
+    public class SampleCertification
     {
     }
 }
