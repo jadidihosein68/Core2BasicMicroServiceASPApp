@@ -25,7 +25,6 @@
 
   <ItemGroup>
     <Folder Include="Models\Constants\" />
-    <Folder Include="Models\DTOs\" />
   </ItemGroup>
 
 </Project>

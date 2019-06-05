@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using AutoMapper;
 using Example.Service.Adapter;
 using Example.Service.Application;
 using Example.Service.Repository;
@@ -47,8 +48,10 @@ namespace MicroService
                         .WithExposedHeaders("X-UserIdentification"));
             });
             services.AddHttpClient();
+            services.AddAutoMapper();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
+
             services.AddDbContext<MicroServiceDbContext>(options =>
             {
                 options.UseSqlServer(Configuration["ConnectionString"],
@@ -88,7 +91,6 @@ namespace MicroService
             });
 
             services.AddScoped<IMicroServiceDbContext, MicroServiceDbContext>();
-
             services.AddScoped<IExampleAdapter, ExampleAdapter>();
             services.AddScoped<IExampleRepository, ExampleRepository>();
             services.AddScoped<IExampleApplication, ExampleApplication>();
