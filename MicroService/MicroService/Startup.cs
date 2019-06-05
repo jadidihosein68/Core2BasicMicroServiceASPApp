@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using Example.Service.Adapter;
+using Example.Service.Application;
+using Example.Service.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -85,6 +88,10 @@ namespace MicroService
             });
 
             services.AddScoped<IMicroServiceDbContext, MicroServiceDbContext>();
+
+            services.AddScoped<IExampleAdapter, ExampleAdapter>();
+            services.AddScoped<IExampleRepository, ExampleRepository>();
+            services.AddScoped<IExampleApplication, ExampleApplication>();
 
         }
 

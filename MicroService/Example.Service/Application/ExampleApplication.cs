@@ -1,4 +1,6 @@
 ﻿using Example.Service.Repository;
+using Microsoft.Extensions.Options;
+using Service.Common.Models.Configurations;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,10 +11,12 @@ namespace Example.Service.Application
     {
 
         private readonly IExampleRepository _exampleRepository;
-        public ExampleApplication(IExampleRepository exampleRepository
-            
-            )
+        private readonly AppSettings _appSettings;
+
+        public ExampleApplication(IExampleRepository exampleRepository ,
+            IOptionsSnapshot<AppSettings> appSettings )
         {
+            _appSettings = appSettings.Value; 
             _exampleRepository = exampleRepository;
         }
     }
