@@ -15,7 +15,7 @@ namespace Example.Service.Repository
         public ExampleRepository(IExampleAdapter exampleAdapter,
                                  IMicroServiceDbContext microServiceDbContext)
         {
-            exampleAdapter = _exampleAdapter;
+            _exampleAdapter = exampleAdapter;
             microServiceDbContext = _microServiceDbContext;
         }
 
